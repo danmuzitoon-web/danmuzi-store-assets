@@ -1,0 +1,120 @@
+<style>
+  /* ── 단무지상점 첫 화면 (아임웹 코드 위젯용) ── 모든 이름 앞에 dmz- 를 붙여 아임웹 기본 스타일과 섞이지 않게 함 */
+    @font-face { font-family: 'DmzPretendard'; font-weight: 400; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/font/pretendard-subset-400.woff2) format('woff2'); }
+  @font-face { font-family: 'DmzPretendard'; font-weight: 500; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/font/pretendard-subset-500.woff2) format('woff2'); }
+  @font-face { font-family: 'DmzPretendard'; font-weight: 600; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/font/pretendard-subset-600.woff2) format('woff2'); }
+  @font-face { font-family: 'DmzPretendard'; font-weight: 700; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/font/pretendard-subset-700.woff2) format('woff2'); }
+  #dmz, #dmz * { box-sizing: border-box; }
+  #dmz { position: relative; width: 100vw; margin-left: calc(50% - 50vw); aspect-ratio: 1920 / 4688; container-type: inline-size;
+    background: #FFFFFF; color: #1E1C1A; font-family: 'DmzPretendard','Pretendard','Apple SD Gothic Neo',sans-serif; overflow: hidden; }
+  #dmz .dmz-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; max-width: none; }
+  #dmz .dmz-p { position: absolute; display: block; transform-origin: 0 0; max-width: none; user-select: none; -webkit-user-drag: none; }
+  #dmz img.dmz-p { object-fit: contain; }
+  #dmz .dmz-t { position: absolute; margin: 0; padding: 0; text-decoration: none; font-family: inherit; }
+  #dmz a.dmz-t:hover { opacity: .6; }
+  #dmz .dmz-spin { width: 100%; height: 100%; object-fit: contain; display: block; max-width: none; animation: dmz-spin var(--d) linear infinite; }
+  @keyframes dmz-spin { to { transform: rotate(360deg); } }
+  #dmz .dmz-muji img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; max-width: none; }
+  #dmz .dmz-muji .dmz-smile { opacity: 0; animation: dmz-smile 5s steps(1, end) infinite; }
+  @keyframes dmz-smile { 0%, 60% { opacity: 0; } 61%, 92% { opacity: 1; } 93%, 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { #dmz .dmz-spin, #dmz .dmz-smile { animation: none; } }
+  /* 상담원 단무지 버튼: 채널톡을 붙이면 이 버튼이 상담창을 연다 */
+  #dmz-cs { position: fixed; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); width: 72px; border: 0; padding: 0; background: none; cursor: pointer; z-index: 9999; transition: transform .2s ease, filter .2s ease; }
+  #dmz-cs img { width: 100%; height: auto; display: block; }
+  #dmz-cs:hover { transform: translateY(-3px) scale(1.05); filter: drop-shadow(0 6px 10px rgba(30,28,26,.12)); }
+  @media (max-width: 760px) { #dmz-cs { width: 56px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); } }
+</style>
+<div id="dmz" class="dmz-page" aria-label="단무지상점">
+  <img class="dmz-layer" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-bg.svg" alt="">
+    <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a00.webp" alt="" style="left:37.0481%;top:10.1850%;width:2.7091%;height:0.4523%;transform:rotate(-33.4753deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a01.webp" alt="" style="left:65.4688%;top:9.7561%;width:3.3333%;height:0.5759%;transform:rotate(-10.229deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a02.webp" alt="" style="left:33.5417%;top:17.0715%;width:33.4375%;height:3.8183%">
+  <div class="dmz-p dmz-muji" style="left:41.5625%;top:10.5442%;width:16.8229%;height:8.3831%"><img src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a03.webp" alt="잔디 언덕 위에 앉아 있는 단무지 인형"><img class="dmz-smile" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-muji-smile.webp" alt=""></div>
+  <div class="dmz-p" style="left:28.0208%;top:6.7686%;width:3.8021%;height:1.4505%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a04.webp" alt="" style="--d:38s;animation-direction:normal"></div>
+  <div class="dmz-p" style="left:66.2354%;top:4.9701%;width:2.3125%;height:0.8822%;transform:rotate(30.0deg)"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a05.webp" alt="" style="--d:9s;animation-direction:reverse"></div>
+  <div class="dmz-p" style="left:35.7812%;top:9.8190%;width:3.3854%;height:1.4505%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a06.webp" alt="" style="--d:8s;animation-direction:normal"></div>
+  <div class="dmz-p" style="left:40.3646%;top:5.9367%;width:2.3958%;height:1.0239%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a07.webp" alt="" style="--d:33s;animation-direction:normal"></div>
+  <div class="dmz-p" style="left:63.3333%;top:9.4137%;width:3.6458%;height:1.4718%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a08.webp" alt="" style="--d:9s;animation-direction:reverse"></div>
+  <div class="dmz-p" style="left:45.3125%;top:7.8139%;width:2.2917%;height:0.9172%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a09.webp" alt="" style="--d:12s;animation-direction:normal"></div>
+  <div class="dmz-p" style="left:54.3229%;top:7.8139%;width:4.0625%;height:1.5998%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a10.webp" alt="" style="--d:58s;animation-direction:normal"></div>
+  <div class="dmz-p" style="left:68.5417%;top:7.8352%;width:2.9167%;height:1.1305%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a11.webp" alt="" style="--d:11s;animation-direction:reverse"></div>
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a12.webp" alt="" style="left:51.3542%;top:5.3193%;width:3.6458%;height:0.6399%;transform:rotate(-26.6252deg)">
+  <div class="dmz-p" style="left:49.3750%;top:4.9768%;width:4.0104%;height:1.6425%"><img class="dmz-spin" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a13.webp" alt="" style="--d:10s;animation-direction:normal"></div>
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-logo-black.webp" alt="단무지상점" style="left:46.1198%;top:0.4266%;width:7.7604%;height:1.1945%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a16.webp" alt="Scars into Stars." style="left:14.4271%;top:25.0853%;width:71.1458%;height:16.3823%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a17.webp" alt="" style="left:22.7083%;top:49.4027%;width:11.7708%;height:6.8259%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a18.webp" alt="" style="left:44.7656%;top:49.4027%;width:10.4688%;height:6.8259%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a19.webp" alt="" style="left:65.2344%;top:49.4027%;width:12.3438%;height:6.8259%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a20.webp" alt="작은 나무배에서 그물을 내리는 단무지" style="left:38.1432%;top:78.0941%;width:22.3937%;height:6.1398%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a21.webp" alt="" style="left:42.3255%;top:82.7745%;width:4.6982%;height:1.1160%;transform:rotate(-24.0847deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a22.webp" alt="" style="left:47.7109%;top:77.8360%;width:3.7813%;height:1.0090%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a23.webp" alt="" style="left:53.1536%;top:81.1679%;width:6.7031%;height:0.5866%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a24.webp" alt="" style="left:31.3828%;top:83.3430%;width:37.2396%;height:3.1113%">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a25.webp" alt="" style="left:62.5861%;top:84.7891%;width:2.6817%;height:0.7559%;transform:rotate(47.215deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a26.webp" alt="" style="left:40.0339%;top:84.9036%;width:3.7895%;height:1.0537%;transform:rotate(-8.0deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a27.webp" alt="" style="left:49.2675%;top:84.2459%;width:3.5166%;height:0.9410%;transform:rotate(19.7514deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a28.webp" alt="" style="left:54.2995%;top:83.6206%;width:3.0237%;height:0.7972%;transform:rotate(-36.6806deg)">
+  <img class="dmz-p" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-a29.webp" alt="단무지상점" style="left:18.7500%;top:92.4915%;width:4.5833%;height:0.7039%">
+  <img class="dmz-layer" src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-fg_lines.svg" alt="">
+  <a class="dmz-t" href="/books" style="left:18.7969%;top:0.8353%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;white-space:nowrap">BOOKS</a>
+<a class="dmz-t" href="/story" style="left:23.9375%;top:0.8353%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;white-space:nowrap">STORY</a>
+<a class="dmz-t" href="https://www.instagram.com/danmuzi.toon/" style="left:28.9844%;top:0.8353%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;white-space:nowrap">TOON</a>
+<a class="dmz-t" href="/club" style="left:64.8333%;top:0.8374%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;white-space:nowrap">CLUB</a>
+<a class="dmz-t" href="/goods" style="left:69.2083%;top:0.8374%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;white-space:nowrap">GOODS</a>
+<a class="dmz-t" href="/login" style="left:74.3906%;top:0.8374%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;opacity:0.55;white-space:nowrap">LOGIN</a>
+<a class="dmz-t" href="/cart" style="left:79.2083%;top:0.8374%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1F1C1A;letter-spacing:0.12em;opacity:0.55;white-space:nowrap">CART</a>
+<div class="dmz-t" style="left:18.7813%;top:37.9895%;font-size:calc(17.00cqw * 100 / 1920);font-weight:400;line-height:1.45;color:#8A847B;width:27.0833%">상처가 별이 되기까지. 단무지는 지나온 마음을 그리고 써서, 오늘을 버티는 사람에게 작은 별 하나를 건네요.</div>
+<a class="dmz-t" href="/story" style="left:18.7813%;top:39.8818%;font-size:calc(14.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#FFFFFF;letter-spacing:0.12em;white-space:nowrap">STORY →</a>
+<div class="dmz-t" style="left:18.7969%;top:46.4944%;font-size:calc(14.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#1E1C1A;letter-spacing:0.14em;white-space:nowrap">BOOKS</div>
+<div class="dmz-t" style="left:76.5208%;top:46.4936%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1E1C1A;letter-spacing:0.12em;white-space:nowrap">VIEW ALL →</div>
+<div class="dmz-t" style="left:18.7813%;top:58.3201%;font-size:calc(16.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#1E1C1A;white-space:nowrap">전자책 제목</div>
+<div class="dmz-t" style="left:18.7760%;top:58.9563%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#8A847B;white-space:nowrap">툰 속 단무지의 한마디가 들어갈 자리예요. 책을 한 줄로 소개해요.</div>
+<div class="dmz-t" style="left:18.8177%;top:60.4044%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1E1C1A;white-space:nowrap">KRW 0,000</div>
+<div class="dmz-t" style="left:40.1875%;top:58.3201%;font-size:calc(16.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#1E1C1A;white-space:nowrap">전자책 제목</div>
+<div class="dmz-t" style="left:40.1823%;top:58.9563%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#8A847B;white-space:nowrap">툰 속 단무지의 한마디가 들어갈 자리예요. 책을 한 줄로 소개해요.</div>
+<div class="dmz-t" style="left:40.2240%;top:60.4044%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1E1C1A;white-space:nowrap">KRW 0,000</div>
+<div class="dmz-t" style="left:61.5937%;top:58.3201%;font-size:calc(16.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#1E1C1A;white-space:nowrap">전자책 제목</div>
+<div class="dmz-t" style="left:61.5885%;top:58.9563%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#8A847B;white-space:nowrap">툰 속 단무지의 한마디가 들어갈 자리예요. 책을 한 줄로 소개해요.</div>
+<div class="dmz-t" style="left:61.6302%;top:60.4044%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1E1C1A;white-space:nowrap">KRW 0,000</div>
+<div class="dmz-t" style="left:35.2786%;top:72.9710%;font-size:calc(19.05cqw * 100 / 1920);font-weight:600;line-height:1.4;color:black;width:30.2099%;text-align:center">Simon Peter went up, and drew the net to land full of great fishes,<br>an hundred and fifty and three:<br>and for all there were so many, yet was not the net broken.<br><br>John 21:11 (KJV)</div>
+<div class="dmz-t" style="left:18.7708%;top:93.4425%;font-size:calc(13.00cqw * 100 / 1920);font-weight:400;line-height:1.7;color:#9C968C;width:15.6250%">단무지가 그리고 쓴 마음의 기록을 파는 작은 가게예요. 새 책과 소식은 레터로 먼저 보내 드려요.</div>
+<div class="dmz-t" style="left:19.3646%;top:94.8557%;font-size:calc(13.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">이메일 주소</div>
+<div class="dmz-t" style="left:30.1510%;top:94.8757%;font-size:calc(13.00cqw * 100 / 1920);font-weight:500;line-height:1.2;color:#1E1C1A;white-space:nowrap">레터 받기</div>
+<div class="dmz-t" style="left:38.1458%;top:92.4803%;font-size:calc(11.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#9C968C;letter-spacing:0.14em;white-space:nowrap">SHOP</div>
+<div class="dmz-t" style="left:38.1823%;top:93.2521%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">BOOKS</div>
+<div class="dmz-t" style="left:38.1615%;top:93.8048%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">GOODS  준비 중</div>
+<div class="dmz-t" style="left:49.3333%;top:92.4803%;font-size:calc(11.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#9C968C;letter-spacing:0.14em;white-space:nowrap">ABOUT</div>
+<div class="dmz-t" style="left:49.3594%;top:93.2521%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">STORY</div>
+<div class="dmz-t" style="left:49.3490%;top:93.8067%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">TOON</div>
+<div class="dmz-t" style="left:49.3594%;top:94.3594%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">CLUB  준비 중</div>
+<div class="dmz-t" style="left:60.5573%;top:92.4801%;font-size:calc(11.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#9C968C;letter-spacing:0.14em;white-space:nowrap">HELP</div>
+<div class="dmz-t" style="left:60.5469%;top:93.2502%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">상담원 단무지</div>
+<div class="dmz-t" style="left:60.5365%;top:93.8048%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">자주 묻는 질문</div>
+<div class="dmz-t" style="left:60.5469%;top:94.3594%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">전자책 다운로드 안내</div>
+<div class="dmz-t" style="left:60.5417%;top:94.9146%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">환불 정책</div>
+<div class="dmz-t" style="left:71.7552%;top:92.4803%;font-size:calc(11.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#9C968C;letter-spacing:0.14em;white-space:nowrap">FOLLOW</div>
+<div class="dmz-t" style="left:71.7760%;top:93.2513%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">Instagram</div>
+<div class="dmz-t" style="left:71.7292%;top:93.8059%;font-size:calc(14.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">YouTube</div>
+<div class="dmz-t" style="left:18.7917%;top:97.0521%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">이용약관</div>
+<div class="dmz-t" style="left:21.9583%;top:97.0525%;font-size:calc(12.00cqw * 100 / 1920);font-weight:600;line-height:1.2;color:#F6F4EF;white-space:nowrap">개인정보처리방침</div>
+<div class="dmz-t" style="left:27.3646%;top:97.0526%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">환불 정책</div>
+<div class="dmz-t" style="left:30.6927%;top:97.0539%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">사업자정보 확인</div>
+<div class="dmz-t" style="left:18.7708%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">상호</div>
+<div class="dmz-t" style="left:20.2552%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">단무지스튜디오</div>
+<div class="dmz-t" style="left:25.0990%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">대표</div>
+<div class="dmz-t" style="left:26.5521%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">임단비</div>
+<div class="dmz-t" style="left:29.1823%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">사업자등록번호</div>
+<div class="dmz-t" style="left:33.4323%;top:97.6885%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">589-43-00892</div>
+<div class="dmz-t" style="left:38.6198%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">통신판매업신고</div>
+<div class="dmz-t" style="left:42.8333%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">제2022-서울관악-2080호</div>
+<div class="dmz-t" style="left:50.6510%;top:97.6866%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">주소</div>
+<div class="dmz-t" style="left:52.1094%;top:97.6920%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">[사업장 주소]</div>
+<div class="dmz-t" style="left:18.7760%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">고객센터</div>
+<div class="dmz-t" style="left:21.3333%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">danmuzi.studio@gmail.com · 평일 10:00–18:00</div>
+<div class="dmz-t" style="left:35.5573%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">개인정보보호책임자</div>
+<div class="dmz-t" style="left:40.9271%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#F6F4EF;white-space:nowrap">임단비</div>
+<div class="dmz-t" style="left:43.5677%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">호스팅 제공</div>
+<div class="dmz-t" style="left:47.0573%;top:98.1613%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#1E1C1A;white-space:nowrap">아임웹</div>
+<div class="dmz-t" style="left:18.7813%;top:98.8013%;font-size:calc(12.00cqw * 100 / 1920);font-weight:400;line-height:1.2;color:#9C968C;white-space:nowrap">© 2026 단무지스튜디오. 모든 그림과 글의 저작권은 단무지에게 있어요.</div>
+</div>
+<button id="dmz-cs" type="button" aria-label="상담원 단무지에게 문의하기"><img src="https://cdn.jsdelivr.net/gh/danmuzitoon-web/danmuzi-store-assets@v2/img/dmz-cs-sticker.png" alt=""></button>
